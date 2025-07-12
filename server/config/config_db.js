@@ -13,6 +13,7 @@ const sequelize = new Sequelize(db_name, db_user, db_password, {
     host: db_host,
     dialect: db_dialect,
     port: db_port,
+    logging: false,
 });
 
 function testConection() {
