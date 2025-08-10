@@ -1,5 +1,9 @@
 const sequelize = require("../config/config_db");
 
+
+const Questao = require("./Questao");
+const Alternativa = require("./Alternativa");
+const Imagem = require("./Imagem");
 const Pessoa = require("./Pessoa");
 const Escola = require("./Escola");
 const Aluno = require("./Aluno");
@@ -9,12 +13,21 @@ const Professor = require("./Professor");
 Aluno.belongsTo(Pessoa, { foreignKey: "id_pessoa" });
 Aluno.belongsTo(Escola, { foreignKey: "id_escola" });
 
-Professor.belongsTo(Pessoa, { foreignKey: "idpessoa" });
+Professor.belongsTo(Pessoa, { foreignKey: "id_pessoa" });
+
+Alternativa.belongsTo(Questao, { foreignKey: "id_questao" });
+Questao.hasMany(Alternativa, { foreignKey: "id_questao" });
+
+Imagem.belongsTo(Questao, { foreignKey: "id_questao" });
+Questao.hasMany(Imagem, { foreignKey: "id_questao" });
 
 module.exports = {
-sequelize,
-Pessoa,
-Escola,
-Aluno,
-Professor,
+	sequelize,
+	Questao,
+	Alternativa,
+	Imagem,
+	Pessoa,
+	Escola,
+	Aluno,
+	Professor,
 };

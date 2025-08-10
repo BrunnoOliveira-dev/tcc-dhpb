@@ -1,6 +1,9 @@
-const express = require("express");
+const express = require('express');
 const router = express.Router();
 
+const QuestaoController = require('../controllers/QuestaoController');
+const AlternativaController = require('../controllers/AlternativaController');
+const ImagemController = require('../controllers/ImagemController');
 const PessoaController = require("../controllers/PessoaController");
 const EscolaController = require("../controllers/EscolaController");
 const AlunoController = require("../controllers/AlunoController");
@@ -8,7 +11,7 @@ const ProfessorController = require("../controllers/ProfessorController");
 
 
 router.get("/", (req, res) => {
-  res.send("API de Gestão Escolar");
+  res.send("API da dhpb");
 });
 
 
@@ -64,5 +67,20 @@ router.post("/professores", async (req, res) => {
 router.get("/professores", async (req, res) => {
   ProfessorController.getProfessores(req, res);
 });
+
+
+// Rotas para Questao
+router.post('/questoes', QuestaoController.criarQuestao);
+router.get('/questoes', QuestaoController.listarQuestoes);
+
+
+// Rotas para Alternativa
+router.post('/alternativas', AlternativaController.criarAlternativa);
+router.get('/alternativas', AlternativaController.listarAlternativas);
+
+// Rotas para Imagem
+router.post('/imagens', ImagemController.criarImagem);
+router.get('/imagens', ImagemController.listarImagens);
+
 
 module.exports = router;

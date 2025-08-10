@@ -13,7 +13,7 @@ id_pessoa: {
     type: DataTypes.INTEGER,
     allowNull: false,
     references: {
-        model: 'pessoas',
+        model: 'pessoa', 
         key: 'id_pessoa'
     }
 },

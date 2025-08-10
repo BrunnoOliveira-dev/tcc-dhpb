@@ -16,21 +16,31 @@ const sequelize = new Sequelize(db_name, db_user, db_password, {
     logging: false,
 });
 
-function testConection() {
-    (async () => {
-        try {
-          await sequelize.authenticate();
-          console.log('Conexão estabelecida com sucesso!');
-          // Cria as tabelas automaticamente conforme os modelos definidos
-          await sequelize.sync();
-          console.log('Tabelas sincronizadas com sucesso!');
-        } catch (error) {
-          console.error('Não foi possível conectar ao banco de dados:', error);
-        }
-    })();
+
+async function testConection() {
+  try {
+    await sequelize.authenticate();
+    console.log('Conexão estabelecida com sucesso!');
+
+    // Importa todos os modelos
+    const { Questao, Alternativa, Imagem, Escola, Pessoa, Aluno, Professor } = require('../models');
+
+    // Sincroniza todos os modelos, atualizando tabelas existentes
+    await Questao.sync({ alter: true });
+    await Alternativa.sync({ alter: true });
+    await Imagem.sync({ alter: true });
+    await Escola.sync({ alter: true });
+    await Pessoa.sync({ alter: true });
+    await Aluno.sync({ alter: true });
+    await Professor.sync({ alter: true });
+
+    console.log('Tabelas sincronizadas/atualizadas com sucesso!');
+  } catch (error) {
+    console.error('Não foi possível conectar ao banco de dados:', error);
+  }
 }
 
-testConection()
+testConection();
 
 module.exports = sequelize;
 
