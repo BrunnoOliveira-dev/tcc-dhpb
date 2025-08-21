@@ -35,7 +35,4 @@ const Imagem = sequelize.define("Imagem", {
   updatedAt: "updated_at"
 });
 
-Imagem.belongsTo(Questao, { foreignKey: 'id_questao' });
-Questao.hasMany(Imagem, { foreignKey: 'id_questao' });
-
 module.exports = Imagem;
