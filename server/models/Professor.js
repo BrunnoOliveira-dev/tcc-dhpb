@@ -28,7 +28,6 @@ createdAt: "created_at",
 updatedAt: "updated_at"
 });
 
-Professor.belongsTo(Pessoa, { foreignKey: 'id_pessoa' });
 
 
 module.exports = Professor;
