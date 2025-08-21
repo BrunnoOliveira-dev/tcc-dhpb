@@ -46,6 +46,3 @@ const Aluno = sequelize.define("Aluno", {
 });
 
 module.exports = Aluno;
-Aluno.belongsTo(Escola, { foreignKey: 'id_escola' });
-
-module.exports = Aluno;
