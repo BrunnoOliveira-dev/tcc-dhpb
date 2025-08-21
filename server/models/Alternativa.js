@@ -39,7 +39,5 @@ const Alternativa = sequelize.define("Alternativa", {
   updatedAt: "updated_at"
 });
 
-Alternativa.belongsTo(Questao, { foreignKey: 'id_questao' });
-Questao.hasMany(Alternativa, { foreignKey: 'id_questao' });
 
 module.exports = Alternativa;
