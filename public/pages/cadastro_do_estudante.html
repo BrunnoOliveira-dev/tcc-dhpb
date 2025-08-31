@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro do Estudante</title>
+  <link rel="stylesheet" href="../src/css/cadastro_de_estudante.css">
+</head>
+<body>
+  <div class="container">
+    <div class="form-box">
+      <h1>Cadastro do Estudante</h1>
+
+      <label class="label">Escola:</label>
+      <input type="text" class="input">
+
+      <label class="label">Tipo da Escola:</label>
+      <div class="options">
+        <label><input type="radio" name="tipo" value="publica"> Pública</label>
+        <label><input type="radio" name="tipo" value="privada"> Privada</label>
+      </div>
+
+      <label class="label">Nível de Ensino:</label>
+      <div class="options">
+        <label><input type="radio" name="nivel" value="fundamental"> Ensino Fundamental</label>
+        <label><input type="radio" name="nivel" value="medio"> Ensino Médio</label>
+      </div>
+
+      <label class="label">Série:</label>
+      <div class="options">
+        <label><input type="radio" name="serie" value="8-9"> 8° ou 9°</label>
+        <label><input type="radio" name="serie" value="1-2"> 1° ou 2°</label>
+        <label><input type="radio" name="serie" value="3"> 3° ano</label>
+      </div>
+
+      <button class="btn">PRÓXIMO</button>
+    </div>
+  </div>
+</body>
+</html>
