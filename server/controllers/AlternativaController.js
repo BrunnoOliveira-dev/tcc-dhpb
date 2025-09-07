@@ -18,7 +18,18 @@ async function listarAlternativas(req, res) {
   }
 }
 
+async function alternativasDeUmaQuestão(req, res) {
+  try {
+    const { id } = req.params;
+    const alternativas = await Alternativa.findAll({ where: { id_questao: id } });
+    res.json(alternativas);
+  } catch (err) {
+    res.status(500).json({ erro: err.message });
+  }
+}
+
 module.exports = {
   criarAlternativa,
-  listarAlternativas
+  listarAlternativas,
+  alternativasDeUmaQuestão
 };

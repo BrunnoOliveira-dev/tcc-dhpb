@@ -72,11 +72,13 @@ router.get("/professores", async (req, res) => {
 // Rotas para Questao
 router.post('/questoes', QuestaoController.criarQuestao);
 router.get('/questoes', QuestaoController.listarQuestoes);
+router.get('/questoes/:id', QuestaoController.obterQuestaoPorId);
 
 
 // Rotas para Alternativa
 router.post('/alternativas', AlternativaController.criarAlternativa);
 router.get('/alternativas', AlternativaController.listarAlternativas);
+router.get('/questoes/alternativas/:id', AlternativaController.alternativasDeUmaQuestão);  // rota para pegar as alternativas de uma questão específica, passando o ID da questão como query param
 
 // Rotas para Imagem
 router.post('/imagens', ImagemController.criarImagem);

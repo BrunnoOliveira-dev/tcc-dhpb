@@ -18,7 +18,18 @@ async function listarQuestoes(req, res) {
   }
 }
 
+async function obterQuestaoPorId(req, res) {
+  try {
+    const { id } = req.params;
+    const questao = await Questao.findByPk(id);
+    res.json(questao)
+  } catch (err) {
+    res.status(500).json({ erro: err.message })
+  }
+}
+
 module.exports = {
   criarQuestao,
-  listarQuestoes
+  listarQuestoes,
+  obterQuestaoPorId
 };

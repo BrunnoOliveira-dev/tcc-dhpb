@@ -19,6 +19,10 @@ router.get('/model_questao', (req, res) => {
     res.sendFile(path.join(__dirname, '../../public/pages/model_questao.html'));
 });
 
+router.get('/model_questao/:id', (req, res) => {
+    res.sendFile(path.join(__dirname, '../../public/pages/model_questao.html'));
+});
+
 // Rota para a página da equipe
 router.get('/pagina_da_equipe', (req, res) => {
     res.sendFile(path.join(__dirname, '../../public/pages/pagina_da_equipe.html'));
