@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Login</title>
+    <link rel="stylesheet" href="../src/css/login.css">
+
+</head>
+<body>
+    <div class="fundo-blur"></div>
+    <div class="central">
+    <form>
+        <h1>Login</h1>
+        <div class="campo-input">
+            <label for="email">Email</label>
+            <input type="email" id="email">
+        </div>
+
+        <div class="campo-input">
+            <label for="email">Senha</label>
+            <input type="password" id="senha">
+        </div>
+
+        <div class="lembra-me">
+            <input type="checkbox">Lembra-me
+        </div>
+
+        <button type="submit" onclick="botao()">Login</button>
+        <a id="forget-password" href="#">Esqueci a senha</a>
+    </form>
+
+    <p>Não possui uma conta? <a id="criar-conta" href="#">Criar Conta</a></p>
+    </div>
+</body>
+</html>

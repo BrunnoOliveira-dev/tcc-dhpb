@@ -1,0 +1,35 @@
+.page {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: white;
+}
+
+
+
+.nav a {
+  margin: 0 1rem;
+  font-size: 1.2rem;
+  font-family: Roboto, sans-serif;
+  text-decoration: none;
+  color: black;
+}
+
+.content {
+  padding: 2rem;
+}
+
+.timeline {
+  list-style: none;
+  padding: 0;
+}
+
+.timeline li {
+  margin: 1rem 0;
+  font-size: 1.3rem;
+  font-family: Roboto, sans-serif;
+}
+
+.date {
+  font-weight: bold;
+  color: #760504;
+}

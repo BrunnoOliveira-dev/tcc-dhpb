@@ -1,0 +1,3 @@
+prontos:
+    Cadastro do estudante
+    Cadastro

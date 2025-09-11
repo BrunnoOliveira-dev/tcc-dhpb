@@ -1,0 +1,31 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+* {
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+}
+html,
+body {
+  margin: 0px;
+  height: 100%;
+}
+/* a blue color as a generic focus style */
+button:focus-visible {
+  outline: 2px solid #4a90e2 !important;
+  outline: -webkit-focus-ring-color auto 5px !important;
+}
+a {
+  text-decoration: none;
+}
+
+:root {
+  /* Variáveis globais para uso em fases.css */
+  --color-background-brand-default: #e0e0e0;
+  --color-text-brand-on-brand: #333333;
+  --size-radius-full: 50%;
+  --subheading-font-family: 'Roboto', Helvetica, Arial, sans-serif;
+  --subheading-font-weight: 700;
+  --subheading-font-size: 24px;
+  --subheading-letter-spacing: 0.5px;
+  --subheading-line-height: 28px;
+  --subheading-font-style: italic;
+}

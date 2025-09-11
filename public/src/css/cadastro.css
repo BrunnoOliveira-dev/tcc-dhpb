@@ -1,0 +1,110 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    height: 100vh;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.fundo{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(darkred, black, black);
+  background-size: cover;
+  background-position: center;
+  filter: blur(10px);
+  z-index: -1;
+
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    width: 450px;
+    background-color: maroon;
+    padding: 30px;
+    border-radius: 30px;
+    margin-bottom: 10px;
+    position: relative;
+    z-index: 1;
+}
+
+.grid-linha{
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 20px 40px;
+    max-width: 800px;
+    margin-bottom: 20px;
+}
+
+.campo-input {
+    display: flex;
+    flex-direction: column;
+    gap: 17px;
+}
+
+
+h1{
+    align-self: center;
+    font-size: 24px;
+}
+
+input{
+    height: 22px;
+    font-family: "times new roman";
+    border: none;
+    background-color: firebrick;
+    color: white;
+    outline: none;
+}
+
+button{
+    height: 30px;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-weight: bold;
+    background-color: transparent;
+    color: white;
+    border-radius: 30px;
+    border: 1px solid white;
+}
+
+
+a{
+    color: white;
+    font-weight: bolder;
+    margin-left: 30px;
+}
+
+button:hover{
+  background-image: linear-gradient(firebrick, rgb(182, 52, 52));
+}
+
+.tipo-perfil {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.tipo-perfil label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 16px;
+}
