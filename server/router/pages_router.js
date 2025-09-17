@@ -6,7 +6,12 @@ const path = require('path');
 
 // Rota para a página inicial  // trocar para a pagina home quando estiver pronta
 router.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, '../../public/pages/cadastro_do_estudante.html'));
+  res.sendFile(path.join(__dirname, '../../public/pages/home.html'));
+});
+
+// Rota para cadastro
+router.get('/cadastro', (req, res) => {
+    res.sendFile(path.join(__dirname, '../../public/pages/cadastro.html'));
 });
 
 // Rota para a página de cadastro do estudante
@@ -26,6 +31,17 @@ router.get('/model_questao/:id', (req, res) => {
 // Rota para a página da equipe
 router.get('/pagina_da_equipe', (req, res) => {
     res.sendFile(path.join(__dirname, '../../public/pages/pagina_da_equipe.html'));
+});
+
+
+// Rota para login
+router.get('/login', (req, res) => {
+    res.sendFile(path.join(__dirname, '../../public/pages/login.html'));
+});
+
+// Rota para caléndario
+router.get('/calendario', (req, res) => {
+    res.sendFile(path.join(__dirname, '../../public/pages/calendario.html'));
 });
 
 module.exports = router;
