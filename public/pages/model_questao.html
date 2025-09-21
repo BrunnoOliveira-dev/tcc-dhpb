@@ -1,28 +1,44 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Layout Responsivo</title>
-  <link rel="stylesheet" href="../src/css/model_questao.css">
+  <link rel="stylesheet" href="../src/css/model_questao.css" />
 </head>
+
 <body>
-  <div class="container">
-    <div class="background"></div>
-    <div class="card" id="card"></div>
-    <div class="input-placeholder"></div>
+  <div class="app-layout">
+    <!-- Fundo -->
+    <img class="background-image" src="../img/plano_de_fundo.png" alt="Imagem Fundo" />
 
-    <div class="input input1"></div>
-    <div class="input input2"></div>
-    <div class="input input3"></div>
-    <div class="input input4"></div>
+    <!-- Conteúdo central -->
+    <div class="content">
+      <!-- Caixa de destaque -->
+      <div class="highlight-box"></div>
 
-    <div class="circle circle1">1</div>
-    <div class="circle circle2">2</div>
-    <div class="circle circle3">3</div>
-    <div class="circle circle4">4</div>
+      <!-- Campos com ícones -->
+      <div class="field-wrapper">
+        <div class="field-icon"></div>
+        <textarea class="form-field" rows="2" placeholder="Campo de texto maior..."></textarea>
+      </div>
+      <div class="field-wrapper">
+        <div class="field-icon"></div>
+        <textarea class="form-field" rows="2" placeholder="Campo de texto maior..."></textarea>
+      </div>
+      <div class="field-wrapper">
+        <div class="field-icon"></div>
+        <textarea class="form-field" rows="2" placeholder="Campo de texto maior..."></textarea>
+      </div>
+      <div class="field-wrapper">
+        <div class="field-icon"></div>
+        <textarea class="form-field" rows="2" placeholder="Campo de texto maior..."></textarea>
+      </div>
+    </div>
   </div>
 
   <script src="../src/js/model_questao.js"></script>
 </body>
+
 </html>

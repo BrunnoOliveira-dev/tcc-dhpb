@@ -69,7 +69,8 @@ body {
 
 /* Estilo dos radios */
 .options input[type="radio"] {
-  accent-color: #FF1010; /* vermelho para combinar */
+  accent-color: #FF1010;
+  /* vermelho para combinar */
   width: 18px;
   height: 18px;
 }

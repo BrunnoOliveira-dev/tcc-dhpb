@@ -1,0 +1,133 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.app-layout {
+    position: relative;
+    width: 100%;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Imagem de fundo */
+.background-image {
+    position: absolute;
+    width: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+/* Container central */
+.content {
+    position: relative;
+    width: 100%;
+    max-width: 923px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    z-index: 2;
+}
+
+/* Caixa de destaque */
+.highlight-box {
+    width: 100%;
+    min-height: 120px;
+    padding: 20px;
+    background: #943B3B;
+    border: 1px solid #FFE8E8;
+    border-radius: 30px;
+    color: white;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.highlight-input {
+    width: 100%;
+    min-height: 80px;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    resize: vertical;
+    /* Permite redimensionar verticalmente */
+}
+
+/* Campos */
+.form-field {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background: #D9D9D9;
+    border-radius: 30px;
+    padding: 10px 0px 10px 0px;
+    /* espaço pro ícone */
+    font-size: 1rem;
+    border: none;
+    outline: none;
+    resize: none;
+    /* textarea sem redimensionamento manual */
+    min-height: 50px;
+}
+
+/* Ícones */
+.field-wrapper {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    position: relative;
+    width: 100%;
+}
+
+.field-icon {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    width: 25px;
+    height: 25px;
+    background: white;
+    border-radius: 50%;
+}
+
+.form-field {
+    flex: 1;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+.score-field {
+    width: 100px;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+
+.submit-btn {
+    margin-top: 20px;
+    padding: 12px 20px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+    background-color: #45a049;
+}

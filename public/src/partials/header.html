@@ -1,16 +1,34 @@
+<!-- Template do Header -->
+<template id="header-template">
+  <header class="header">
+    <div class="header-container">
+      <a href="/" class="logo-link">
+        <img class="logo" src="../img/logo_dhpb.png" alt="Logo DHPB" />
+      </a>
+      <nav class="nav" aria-label="Menu principal">
+        <a href="../pages/sobre.html">Sobre</a>
+        <a href="/calendario">Calendário</a>
+        <a href="../pages/contatos.html">Contatos</a>
+        <a href="../pages/provas_anteriores.html">Provas Anteriores</a>
+        <a href="../pages/regulamento.html">Regulamento</a>
 
-<header class="header">
-  <div class="header-container">
-    <a href="../pages/index.html" class="logo-link">
-      <img class="logo" src="../img/logo_dhpb.png" alt="Logo DHPB" />
-    </a>
-    <nav class="nav" aria-label="Menu principal">
-      <a href="../pages/sobre.html">Sobre</a>
-      <a href="../pages/calendario.html">Calendário</a>
-      <a href="../pages/contatos.html">Contatos</a>
-      <a href="../pages/provas_anteriores.html">Provas Anteriores</a>
-      <a href="../pages/regulamento.html">Regulamento</a>
-    </nav>
-  </div>
-  <div class="header-underline"></div>
-</header>
+        <!-- Avatar -->
+        <a href="/pagina_do_participante" id="link-perfil" style="display: none;">
+          <img class="icon" src="../../img/icons/avatar.png" alt="avatar">
+        </a>
+
+        <!-- Botão cadastro -->
+        <a href="/cadastro" id="link-cadastro" style="display: none;">
+          <button id="botao_cadastro">Entrar/Cadastro</button>
+        </a>
+
+        <a href="/menu"><img class="icon" src="../../img/icons/menu.png" alt="menu"></a>
+
+      </nav>
+    </div>
+    <div class="header-underline"></div>
+  </header>
+</template>
+
+<!-- Aqui vai o lugar onde o header será renderizado -->
+<div id="header"></div>

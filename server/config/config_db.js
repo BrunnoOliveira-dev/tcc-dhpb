@@ -4,10 +4,10 @@ const Sequelize = require('sequelize');
 
 const db_name = 'railway';
 const db_user = 'root';
-const db_password = 'kBZUqKMbHSTcDVdsFzWKrIhXDrhbTPGV';
-const db_host = 'gondola.proxy.rlwy.net';
+const db_password = "YeFCsUgWbIiujIuYxhvEQPQhPtoJZVNc" //'kBZUqKMbHSTcDVdsFzWKrIhXDrhbTPGV';
+const db_host = "centerbeam.proxy.rlwy.net" //'gondola.proxy.rlwy.net';
 const db_dialect = 'mysql'; // ou 'postgres', 'sqlite', etc.
-const db_port = 36544; // Porta padrão do MySQL
+const db_port = 56054; // Porta padrão do MySQL
 
 const sequelize = new Sequelize(db_name, db_user, db_password, {
     host: db_host,

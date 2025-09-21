@@ -2,6 +2,28 @@ const { DataTypes } = require("sequelize");
 const sequelize = require("../config/config_db");  // certifique-se que o caminho está correto
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 const Pessoa = sequelize.define("Pessoa", {
   id_pessoa: {
     type: DataTypes.INTEGER,
@@ -25,6 +47,11 @@ const Pessoa = sequelize.define("Pessoa", {
     type: DataTypes.STRING(60),
     allowNull: false,
   },
+  email: {
+    type: DataTypes.STRING(100),
+    allowNull: false,
+    unique: true,
+  },
   created_at: {
     type: DataTypes.DATE,
     defaultValue: DataTypes.NOW,
@@ -37,7 +64,8 @@ const Pessoa = sequelize.define("Pessoa", {
   tableName: "pessoa",
   timestamps: true,
   createdAt: "created_at",
-  updatedAt: "updated_at"
+  updatedAt: "updated_at",
+
 });
 
 module.exports = Pessoa;

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página do Participante</title>
+  <link rel="stylesheet" href="../src/css/header.css">
+  <link rel="stylesheet" href="../src/css/pagina_do_participante.css">
+</head>
+
+<body>
+  <div class="container">
+    <!-- Header -->
+    <div id="header"></div>
+
+    <!-- Nome do participante -->
+    <p class="name">
+      Olá, <span id="nome">Maria</span>
+    </p>
+
+
+    <!-- Card principal -->
+    <div class="main-card">
+      <h3>Prova - 3ª DHPB</h3>
+      <p>A 1ª Fase começa em 67 dias.</p>
+      <img src="https://placehold.co/40x49" alt="Icone">
+    </div>
+
+    <!-- Card secundário: Equipe -->
+    <div class="card">
+      <h2>Equipe</h2>
+      <h3>Os Historiadores</h3>
+      <div class="student-list">
+        <div>Maria Lima</div>
+        <div>Irene Silva</div>
+        <div>Leonardo Couto</div>
+      </div>
+    </div>
+
+    <!-- Card secundário: Certificados -->
+    <div class="card">
+      <h2>Certificados</h2>
+      <img id="img-logo-certificado" src="../img/icons/certificado.png" alt="">
+    </div>
+
+    <!-- Área do estudante -->
+    <div class="student-area">
+      <h2>Área do Estudante</h2>
+      <div class="icon-box"></div>
+    </div>
+  </div>
+
+  <script src="../src/js/pagina_do_participante.js"></script>
+
+
+  <!-- importa a função -->
+  <script src="../src/js/caregar_partials.js"></script>
+
+  <!-- chama a função -->
+  <script>
+    carregarParcial('./src/partials/header.html', 'header', () => {
+      const usuarioLogado = localStorage.getItem("usuario");
+      const linkPerfil = document.getElementById("link-perfil");
+      const linkCadastro = document.getElementById("link-cadastro");
+
+      if (usuarioLogado) {
+        linkPerfil.style.display = "inline-block";
+        linkCadastro.style.display = "none";
+      } else {
+        linkPerfil.style.display = "none";
+        linkCadastro.style.display = "inline-block";
+      }
+    });
+
+    carregarParcial('./src/partials/roda_pé.html', 'footer');
+  </script>
+</body>
+
+</html>

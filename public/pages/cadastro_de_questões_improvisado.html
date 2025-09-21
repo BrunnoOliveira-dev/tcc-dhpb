@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cadastro de Questões</title>
+    <link rel="stylesheet" href="../src/css/cadastro_de_questões_improvisado.css" />
+</head>
+
+<body>
+    <div class="app-layout">
+        <!-- Fundo -->
+        <img class="background-image" src="../img/plano_de_fundo.png" alt="Imagem Fundo" />
+
+        <!-- Conteúdo central -->
+        <form class="content" id="form-questao">
+            <!-- Caixa de destaque -->
+            <div class="highlight-box">
+                <textarea class="highlight-input" placeholder="Coloque o texto da questão aqui" required></textarea>
+            </div>
+
+            <!-- Alternativas com pontuação -->
+            <div class="field-wrapper">
+                <input class="form-field" type="text" placeholder="Digite a primeira alternativa..." required>
+                <input class="score-field" type="number" name="pontuacao1" placeholder="Pontuação" min="0" max="10"
+                    step="1" required>
+            </div>
+            <div class="field-wrapper">
+                <input class="form-field" type="text" placeholder="Digite a segunda alternativa..." required>
+                <input class="score-field" type="number" name="pontuacao2" placeholder="Pontuação" min="0" max="10"
+                    step="1" required>
+            </div>
+            <div class="field-wrapper">
+                <input class="form-field" type="text" placeholder="Digite a terceira alternativa..." required>
+                <input class="score-field" type="number" name="pontuacao3" placeholder="Pontuação" min="0" max="10"
+                    step="1" required>
+            </div>
+            <div class="field-wrapper">
+                <input class="form-field" type="text" placeholder="Digite a quarta alternativa..." required>
+                <input class="score-field" type="number" name="pontuacao4" placeholder="Pontuação" min="0" max="10"
+                    step="1" required>
+            </div>
+
+            <!-- Botão de envio -->
+            <button type="submit" class="submit-btn">Salvar Questão</button>
+        </form>
+    </div>
+
+    <script src="../src/js/cadastro_de_questões_improvisado.js"></script>
+</body>
+
+</html>

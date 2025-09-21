@@ -44,4 +44,14 @@ router.get('/calendario', (req, res) => {
     res.sendFile(path.join(__dirname, '../../public/pages/calendario.html'));
 });
 
+// Rota pagina do participante
+router.get('/pagina_do_participante', (req, res) => {
+    res.sendFile(path.join(__dirname, '../../public/pages/pagina_do_participante.html'));
+});
+
+// Rota pagina de cadastro de questões improvisado
+router.get('/cadastro_de_questoes_improvisado', (req, res) => {
+    res.sendFile(path.join(__dirname, '../../public/pages/cadastro_de_questões_improvisado.html'));
+});
+
 module.exports = router;

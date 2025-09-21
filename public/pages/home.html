@@ -1,51 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="../src/css/home.css">
-    <link rel="stylesheet" href="../src/css/header.css">
-    <link rel="stylesheet" href="../src/css/roda_pé.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../src/css/home.css">
+  <link rel="stylesheet" href="../src/css/header.css">
+  <link rel="stylesheet" href="../src/css/roda_pé.css">
 </head>
+
 <body>
-    <!-- index.html -->
-<div class="page">
-  <div id="header"></div>
+  <!-- index.html -->
+  <div class="page">
+    <div id="header"></div>
 
-  <section class="hero">
-    <h1>3º Desafio em História da Paraíba</h1>
-    <p>
-      Para estudantes do 8º ano do Ensino Fundamental até o 3º ano do Ensino Médio. 
-      Inscrições abertas até o dia 12/09.
-    </p>
-  </section>
+    <section class="hero">
+      <h1>3º Desafio em História da Paraíba</h1>
+      <p>
+        Para estudantes do 8º ano do Ensino Fundamental até o 3º ano do Ensino Médio.
+        Inscrições abertas até o dia 12/09.
+      </p>
+    </section>
 
-  <section class="highlight"></section>
+    <section class="highlight"></section>
 
-  <section class="social">
-    <h2>Nossas redes sociais:</h2>
-    <p>@oficialdhpb</p>
-    <p>DHPB</p>
-    <div class="icon"></div>
-  </section>
+    <section class="social">
+      <h2>Nossas redes sociais:</h2>
+      <p>@oficialdhpb</p>
+      <p>DHPB</p>
+      <div class="icon"></div>
+    </section>
 
-  <div id="footer"></div>
-</div>
+    <div id="footer"></div>
+  </div>
 
-    <script>
-        fetch('../src/partials/header.html')
-        .then(response => response.text())
-        .then(data => {
-        document.getElementById('header').innerHTML = data;
-        });
-    fetch('../src/partials/roda_pé.html')
-        .then(response => response.text())
-        .then(data => {
-        document.getElementById('footer').innerHTML = data;
-        });
-    </script>
-    </script>
+  <!-- importa a função -->
+  <script src="../src/js/caregar_partials.js"></script>
+
+  <!-- chama a função -->
+  <script>
+    carregarParcial('./src/partials/header.html', 'header', () => {
+      const usuarioLogado = localStorage.getItem("usuario");
+      const linkPerfil = document.getElementById("link-perfil");
+      const linkCadastro = document.getElementById("link-cadastro");
+
+      if (usuarioLogado) {
+        linkPerfil.style.display = "inline-block";
+        linkCadastro.style.display = "none";
+      } else {
+        linkPerfil.style.display = "none";
+        linkCadastro.style.display = "inline-block";
+      }
+    });
+
+    carregarParcial('./src/partials/roda_pé.html', 'footer');
+  </script>
 
 </body>
+
 </html>

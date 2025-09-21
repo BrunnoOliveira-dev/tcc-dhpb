@@ -97,4 +97,10 @@ router.post('/imagens', ImagemController.criarImagem);
 router.get('/imagens', ImagemController.listarImagens);
 
 
+// rotas para cadastro e login podem ser adicionadas aqui
+
+router.post('/cadastro', PessoaController.setPessoa); // Reutilizando o controlador de Pessoa para cadastro
+router.post('/login', PessoaController.login); // Rota de login
+
+
 module.exports = router;

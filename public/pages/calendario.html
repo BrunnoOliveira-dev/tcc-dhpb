@@ -1,51 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="../src/css/calendario.css">
-    <link rel="stylesheet" href="../src/css/header.css">
-    <link rel="stylesheet" href="../src/css/roda_pé.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../src/css/calendario.css">
+  <link rel="stylesheet" href="../src/css/header.css">
+  <link rel="stylesheet" href="../src/css/roda_pé.css">
 </head>
+
 <body>
-    
-<!-- Layout principal -->
-<div class="page">
-  <!-- Cabeçalho -->
-  <div id="header"></div>
 
-  <!-- Conteúdo -->
-  <main class="content">
-    <h1>Calendário</h1>
-    <ul class="timeline">
-      <li><span class="date">2ggygg8/07/2025 até 05/09/2025</span> - Inscrições individuais e de equipes</li>
-      <li><span class="date">19/09/25 até 24/09/25</span> - Prova da 1ª fase</li>
-      <li><span class="date">26/09/25 até 01/10/25</span> - Prova da 2ª fase</li>
-      <li><span class="date">03/10/25 até 08/10/25</span> - Prova da 3ª fase</li>
-      <li><span class="date">10/10/25 até 15/10/25</span> - Prova da 4ª fase</li>
-      <li><span class="date">07/11/25</span> - Resultado da 4ª fase e convocação</li>
-      <li><span class="date">29/11/25</span> - Fase final presencial</li>
-      <li><span class="date">30/11/25</span> - Cerimônia de premiação</li>
-    </ul>
-  </main>
+  <!-- Layout principal -->
+  <div class="page">
+    <!-- Cabeçalho -->
+    <div id="header"></div>
 
-  <!-- Rodapé -->
-  <div id="footer"></div>
-</div>
+    <!-- Conteúdo -->
+    <main class="content">
+      <h1>Calendário</h1>
+      <ul class="timeline">
+        <li><span class="date">2ggygg8/07/2025 até 05/09/2025</span> - Inscrições individuais e de equipes</li>
+        <li><span class="date">19/09/25 até 24/09/25</span> - Prova da 1ª fase</li>
+        <li><span class="date">26/09/25 até 01/10/25</span> - Prova da 2ª fase</li>
+        <li><span class="date">03/10/25 até 08/10/25</span> - Prova da 3ª fase</li>
+        <li><span class="date">10/10/25 até 15/10/25</span> - Prova da 4ª fase</li>
+        <li><span class="date">07/11/25</span> - Resultado da 4ª fase e convocação</li>
+        <li><span class="date">29/11/25</span> - Fase final presencial</li>
+        <li><span class="date">30/11/25</span> - Cerimônia de premiação</li>
+      </ul>
+    </main>
 
-    <script>
+    <!-- Rodapé -->
+    <div id="footer"></div>
+  </div>
+
+  <script>
     fetch('../src/partials/header.html')
-        .then(response => response.text())
-        .then(data => {
+      .then(response => response.text())
+      .then(data => {
         document.getElementById('header').innerHTML = data;
-        });
+      });
     fetch('../src/partials/roda_pé.html')
-        .then(response => response.text())
-        .then(data => {
+      .then(response => response.text())
+      .then(data => {
         document.getElementById('footer').innerHTML = data;
-        });
-    </script>
+      });
+  </script>
 
 </body>
+
 </html>

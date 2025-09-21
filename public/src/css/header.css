@@ -1,10 +1,11 @@
 /* Header melhorado e responsivo */
 .header {
   background: #fff;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
   padding: 0;
   position: relative;
 }
+
 .header-container {
   max-width: 1482px;
   height: 82px;
@@ -14,18 +15,37 @@
   position: relative;
   padding: 0 24px;
 }
+
 .logo-link {
   display: flex;
   align-items: center;
 }
+
 .logo {
   width: 148px;
   height: 82px;
   transition: transform 0.2s;
 }
-.logo-link:hover .logo {
+
+.logo-link:hover,
+.icon:hover {
   transform: scale(1.05);
 }
+
+.icon {
+  width: 60px;
+  height: 60px;
+  border: none;
+  ;
+}
+
+#botão_cadastro {
+  background-color: red;
+  color: white;
+  border-radius: 5px;
+  height: 35px;
+}
+
 .nav {
   display: flex;
   gap: 32px;
@@ -35,6 +55,7 @@
   height: 64px;
   align-items: center;
 }
+
 .nav a {
   font-size: 1.1rem;
   color: #000;
@@ -48,11 +69,14 @@
   border-radius: 4px;
   transition: background 0.2s, color 0.2s;
 }
-.nav a:hover, .nav a:focus {
+
+.nav a:hover,
+.nav a:focus {
   background: #f5eaea;
   color: #b00000;
   outline: none;
 }
+
 .header-extra {
   position: absolute;
   right: 24px;
@@ -62,6 +86,7 @@
   background: #FFFBFB;
   border-radius: 8px;
 }
+
 .header-underline {
   position: absolute;
   left: 213px;
@@ -70,6 +95,7 @@
   height: 0px;
   border-bottom: 5px solid #B00000;
 }
+
 @media (max-width: 700px) {
   .header-container {
     flex-direction: column;
@@ -77,6 +103,7 @@
     height: auto;
     padding: 16px;
   }
+
   .nav {
     position: static;
     flex-direction: column;
@@ -85,16 +112,19 @@
     margin-top: 12px;
     height: auto;
   }
+
   .logo {
     width: 100px;
     height: auto;
   }
+
   .header-extra {
     position: static;
     width: 100%;
     margin-top: 12px;
     height: 40px;
   }
+
   .header-underline {
     left: 0;
     width: 100%;
