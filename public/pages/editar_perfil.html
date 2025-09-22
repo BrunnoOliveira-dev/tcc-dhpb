@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Área do Estudante</title>
+    <link rel="stylesheet" href="../src/css/editar_perfil.css">
+    <link rel="stylesheet" href="../src/css/header.css">
+
+</head>
+
+<body>
+    <div id="header"></div>
+
+
+    <main class="main-container">
+        <section class="profile-section">
+            <div class="profile-picture"></div>
+            <div class="profile-info">
+                <h1 class="name" id="student-name">Maria Lima</h1>
+                <p class="team" id="student-team">Equipe Historiadores</p>
+                <button class="edit-profile" id="edit-profile-btn">Editar Perfil</button>
+            </div>
+        </section>
+
+        <section class="student-area" id="student-area">
+            <h2>Área do Estudante</h2>
+
+            <div class="student-card">
+                <div class="card-row">
+                    <span class="label">Email</span>
+                    <span class="value" id="student-email">maria.lima@academico.ifpb.edu.br</span>
+                </div>
+                <div class="card-row">
+                    <span class="label">Nome</span>
+                    <span class="value" id="student-firstname">Maria</span>
+                </div>
+                <div class="card-row">
+                    <span class="label">Sobrenome</span>
+                    <span class="value" id="student-lastname">Lima</span>
+                </div>
+                <div class="card-row">
+                    <span class="label">CPF</span>
+                    <span class="value" id="student-cpf">000.000.000-00</span>
+                </div>
+                <div class="card-row">
+                    <span class="label">Cidade</span>
+                    <span class="value" id="student-city">Campina Grande</span>
+                </div>
+                <div class="card-row">
+                    <span class="label">Escola</span>
+                    <span class="value" id="student-school">Instituto Federal da Paraíba</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="exam-section" id="exam-section">
+            <h2>Prova - 3ª DHPB</h2>
+            <div class="exam-row"></div>
+            <div class="exam-row"></div>
+            <div class="exam-row"></div>
+            <div class="exam-row"></div>
+            <div class="exam-row"></div>
+            <div class="exam-row"></div>
+        </section>
+    </main>
+
+
+   <script src="../src/js/caregar_partials.js"></script>
+
+  <!-- chama a função -->
+  <script>
+    carregarParcial('./src/partials/header.html', 'header', () => {
+      const usuarioLogado = localStorage.getItem("usuario");
+      const linkPerfil = document.getElementById("link-perfil");
+      const linkCadastro = document.getElementById("link-cadastro");
+
+      if (usuarioLogado) {
+        linkPerfil.style.display = "inline-block";
+        linkCadastro.style.display = "none";
+      } else {
+        linkPerfil.style.display = "none";
+        linkCadastro.style.display = "inline-block";
+      }
+    });
+
+    carregarParcial('./src/partials/roda_pé.html', 'footer');
+  </script>
+
+</body>
+
+</html>

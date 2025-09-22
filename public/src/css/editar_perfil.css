@@ -1,0 +1,182 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(270deg, white 0%, white 31%, white 54%, white 72%);
+  color: #151515;
+}
+
+
+
+
+.user-icons {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.user-circle {
+  width: 60px;
+  height: 60px;
+  background: #2C2C2C;
+  color: #F5F5F5;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.notification-icon {
+  width: 50px;
+  height: 50px;
+  border: 4px solid #1E1E1E;
+  outline-offset: -2px;
+}
+
+/* Main container */
+.main-container {
+  padding: 20px 30px;
+}
+
+/* Profile Section */
+.profile-section {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.profile-picture {
+  width: 150px;
+  height: 150px;
+  background: white;
+}
+
+.profile-info {
+  flex: 1;
+}
+
+.profile-info .name {
+  font-size: 50px;
+  font-weight: 700;
+}
+
+.profile-info .team {
+  font-size: 30px;
+  font-style: italic;
+}
+
+.edit-profile {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background: #760504;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 25px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* Student Area */
+.student-area h2 {
+  font-size: 50px;
+  font-style: italic;
+  font-weight: 800;
+  color: #883433;
+  margin: 30px 0 20px;
+}
+
+.student-card {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.card-row {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  font-weight: 700;
+  font-size: 35px;
+}
+
+.value {
+  font-weight: 700;
+  font-size: 35px;
+  margin-left: 20px;
+}
+
+/* Exam Section */
+.exam-section h2 {
+  font-size: 45px;
+  font-weight: 700;
+  color: white;
+  margin: 20px 0;
+}
+
+.exam-row {
+  height: 55px;
+  background: #CDCDCD;
+  margin-bottom: 15px;
+  border-radius: 5px;
+}
+
+/* Responsivo */
+@media (max-width: 1200px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav {
+    gap: 15px;
+  }
+
+  .profile-section {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .profile-info .name {
+    font-size: 35px;
+  }
+
+  .profile-info .team {
+    font-size: 20px;
+  }
+
+  .edit-profile {
+    font-size: 20px;
+  }
+
+  .student-area h2 {
+    font-size: 35px;
+  }
+
+  .card-row {
+    flex-direction: column;
+  }
+
+  .label,
+  .value {
+    font-size: 25px;
+  }
+
+  .exam-section h2 {
+    font-size: 35px;
+  }
+
+  .exam-row {
+    height: 45px;
+  }
+}

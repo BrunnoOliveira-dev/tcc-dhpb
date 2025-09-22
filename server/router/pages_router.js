@@ -54,4 +54,9 @@ router.get('/cadastro_de_questoes_improvisado', (req, res) => {
     res.sendFile(path.join(__dirname, '../../public/pages/cadastro_de_questões_improvisado.html'));
 });
 
+// Rota pagina de editar perfil
+router.get('/editar_perfil', (req, res) => {
+    res.sendFile(path.join(__dirname, '../../public/pages/editar_perfil.html'));
+});
+
 module.exports = router;
