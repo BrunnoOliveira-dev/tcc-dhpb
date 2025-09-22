@@ -16,29 +16,29 @@
         <!-- Conteúdo central -->
         <form class="content" id="form-questao">
             <!-- Caixa de destaque -->
-            <div class="highlight-box">
-                <textarea class="highlight-input" placeholder="Coloque o texto da questão aqui" required></textarea>
+            <div class="enunciado-box">
+                <textarea class="enunciado-input" placeholder="Coloque o texto da questão aqui" required></textarea>
             </div>
 
             <!-- Alternativas com pontuação -->
             <div class="field-wrapper">
-                <input class="form-field" type="text" placeholder="Digite a primeira alternativa..." required>
-                <input class="score-field" type="number" name="pontuacao1" placeholder="Pontuação" min="0" max="10"
+                <input class="form-field" type="text" id="alternativa1" placeholder="Digite a primeira alternativa..." required>
+                <input class="score-field" type="number" id="pontuacao1" placeholder="Pontuação" min="0" max="10"
                     step="1" required>
             </div>
             <div class="field-wrapper">
-                <input class="form-field" type="text" placeholder="Digite a segunda alternativa..." required>
-                <input class="score-field" type="number" name="pontuacao2" placeholder="Pontuação" min="0" max="10"
+                <input class="form-field" type="text" id="alternativa2" placeholder="Digite a segunda alternativa..." required>
+                <input class="score-field" type="number" id="pontuacao2" placeholder="Pontuação" min="0" max="10"
                     step="1" required>
             </div>
             <div class="field-wrapper">
-                <input class="form-field" type="text" placeholder="Digite a terceira alternativa..." required>
-                <input class="score-field" type="number" name="pontuacao3" placeholder="Pontuação" min="0" max="10"
+                <input class="form-field" type="text" id="alternativa3" placeholder="Digite a terceira alternativa..." required>
+                <input class="score-field" type="number" id="pontuacao3" placeholder="Pontuação" min="0" max="10"
                     step="1" required>
             </div>
             <div class="field-wrapper">
-                <input class="form-field" type="text" placeholder="Digite a quarta alternativa..." required>
-                <input class="score-field" type="number" name="pontuacao4" placeholder="Pontuação" min="0" max="10"
+                <input class="form-field" type="text" id="alternativa4" placeholder="Digite a quarta alternativa..." required>
+                <input class="score-field" type="number" id="pontuacao4" placeholder="Pontuação" min="0" max="10"
                     step="1" required>
             </div>
 
