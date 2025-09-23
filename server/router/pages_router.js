@@ -59,4 +59,9 @@ router.get('/editar_perfil', (req, res) => {
     res.sendFile(path.join(__dirname, '../../public/pages/editar_perfil.html'));
 });
 
+// Rota pagina fases
+router.get('/fases', (req, res) => {
+    res.sendFile(path.join(__dirname, '../../public/pages/fases.html'));
+});
+
 module.exports = router;

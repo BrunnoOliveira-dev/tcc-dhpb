@@ -1,63 +1,77 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta charset="utf-8" />
-    <title>Equipe Historiadores - DHPBB</title>
-    <meta name="description" content="Portal da Equipe Historiadores com cronograma de fases do projeto DHPBB" />
-  <link rel="stylesheet" href="../src/css/fases.css" />
-  <link rel="stylesheet" href="../src/css/global.css" />
-  </head>
-  <body>
-    <main class="desktop">
-      <div class="div">
-        <section class="overlap">
-          <div class="group">
-            <div class="overlap-group-wrapper">
-              <div class="overlap-group">
-                <img class="DHPBB" src="../img/fases/DHPBB-1.png" alt="Background pattern DHPBB" />
-                <img class="img" src="../img/fases/DHPBB-2.png" alt="DHPBB decorative element" />
-                <img class="DHPBB-2" src="../img/fases/DHPBB-3.png" alt="DHPBB logo element" />
-              </div>
-            </div>
-          </div>
-          <h1 class="text-wrapper">Equipe Historiadores</h1>
-          
-          
-          <img class="rectangle" src="../img/fases/DHPBB-4.png" alt="Content background" />
-          <nav class="group-2" role="navigation" aria-label="Cronograma de fases">
-            <article class="overlap-2">
-              <img class="line" src="../img/fases/line-1.svg" alt="Timeline connector" />
-              <img class="rectangle-2" src="../img/fases/fundo_inputs.png" alt="Phase 2 background" />
-              <h2 class="p">FASE 2 - 25/09/2025 a 30/09/2025</h2>
-              <img class="image" src="../img/fases/cadeado_fechado.png" alt="Phase 2 icon" />
-            </article>
-            <article class="overlap-3">
-                <img class="rectangle-2" src="../img/fases/fundo_inputs.png" alt="Phase 2 background" />
-              <h2 class="text-wrapper-2">FASE 1 - 18/09/2025 a 23/09/2025</h2>
-              <img class="image-2" src="../img/fases/cadeado_aberto.png" alt="Phase 1 icon" />
-            </article>
-            <article class="overlap-4">
-                <img class="rectangle-2" src="../img/fases/fundo_inputs.png" alt="Phase 2 background" />
 
-              <img class="image-3" src="../img/fases/cadeado_fechado.png" alt="Phase 4 icon" />
-              <h2 class="text-wrapper-3">FASE 4 - 09/10/2025 a 14/10/2025</h2>
-            </article>
-            <article class="overlap-5">
-                <img class="rectangle-2" src="../img/fases/fundo_inputs.png" alt="Phase 2 background" />
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Equipe Historiadores</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../src/css/fases.css">
+  <link rel="stylesheet" href="../src/css/header.css">
+</head>
 
-              <img class="image-4" src="../img/fases/cadeado_fechado.png" alt="Phase 3 icon" />
-              <h2 class="text-wrapper-4">FASE 3 - 02/10/2025 a 07/10/2025</h2>
-            </article>
-          </nav>
-        </section>
-        <img class="image-5" src="../img/logo_dhpb.png" alt="Company logo" />
-        <div class="avatar" role="img" aria-label="User avatar with initial M">
-          <span class="initials">M</span>
-        </div>
-        <div class="menu"><img class="icon" src="../img/fases/menu.png" /></div>
-        
+<body>
+  <div id="header"></div>
+
+  <div class="container" id="main-container">
+
+    <div id="header-text">Equipe Historiadores</div>
+
+    <div id="phase-container">
+      <div class="phase" id="fase1">
+        <span class="phase-text" id="fase1-text">FASE 1 - 18/09/2025 a 23/09/2025</span>
+        <img src="https://placehold.co/40x51" alt="Ícone Fase 1" class="phase-icon" id="fase1-icon">
       </div>
-    </main>
-  </body>
+      <div class="phase" id="fase2">
+        <span class="phase-text" id="fase2-text">FASE 2 - 25/09/2025 a 30/09/2025</span>
+        <img src="https://placehold.co/40x51" alt="Ícone Fase 2" class="phase-icon" id="fase2-icon">
+      </div>
+      <div class="phase" id="fase3">
+        <span class="phase-text" id="fase3-text">FASE 3 - 02/10/2025 a 07/10/2025</span>
+        <img src="https://placehold.co/40x51" alt="Ícone Fase 3" class="phase-icon" id="fase3-icon">
+      </div>
+      <div class="phase" id="fase4">
+        <span class="phase-text" id="fase4-text">FASE 4 - 09/10/2025 a 14/10/2025</span>
+        <img src="https://placehold.co/40x51" alt="Ícone Fase 4" class="phase-icon" id="fase4-icon">
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    // Exemplo de uso com JS
+    const fases = document.querySelectorAll('.phase');
+    fases.forEach(fase => {
+      fase.addEventListener('click', () => {
+        alert(`Você clicou em ${fase.querySelector('.phase-text').textContent}`);
+      });
+    });
+
+    // Exemplo de alterar texto dinamicamente
+    document.getElementById('header-text').textContent = "Nova Equipe Historiadores";
+  </script>
+
+
+  <!-- importa a função -->
+  <script src="../src/js/caregar_partials.js"></script>
+
+  <!-- chama a função -->
+  <script>
+    carregarParcial('./src/partials/header.html', 'header', () => {
+      const usuarioLogado = localStorage.getItem("usuario");
+      const linkPerfil = document.getElementById("link-perfil");
+      const linkCadastro = document.getElementById("link-cadastro");
+
+      if (usuarioLogado) {
+        linkPerfil.style.display = "inline-block";
+        linkCadastro.style.display = "none";
+      } else {
+        linkPerfil.style.display = "none";
+        linkCadastro.style.display = "inline-block";
+      }
+    });
+  </script>
+
+</body>
+
 </html>
