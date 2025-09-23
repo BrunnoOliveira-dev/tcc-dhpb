@@ -1,71 +1,50 @@
-// cadastro.js
+document.addEventListener('DOMContentLoaded', function () {
+  const form = document.getElementById('form-cadastro');
 
-// Seleciona o formulário
-const form = document.querySelector("form");
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
 
-function limparCPF(cpf) {
-    return cpf.replace(/[^\d]+/g, '');
-}
+    // Captura dos campos
+    const nome = document.getElementById('nome').value.trim();
+    const sobrenome = document.getElementById('sobrenome').value.trim();
+    const email = document.getElementById('email').value.trim().toLowerCase();
+    const senha = document.getElementById('senha').value;
+    const cpf = document.getElementById('cpf').value.trim();
+    const cidade = document.getElementById('cidade').value.trim();
+    const tipoPessoaInput = document.querySelector('input[name="tipo_pessoa"]:checked');
 
-// 
-// desativado para facilitar os testes
-// 
-
-// function validarCPF(cpf) {       // desativado para facilitar os testes
-//     cpf = cpf.replace(/[^\d]+/g, '');
-//     if (cpf.length !== 11 || /^(\d)\1+$/.test(cpf)) return false;
-//     let soma = 0,
-//         resto;
-//     for (let i = 1; i <= 9; i++) soma += parseInt(cpf.substring(i - 1, i)) * (11 - i);
-//     resto = (soma * 10) % 11;
-//     if (resto === 10 || resto === 11) resto = 0;
-//     if (resto !== parseInt(cpf.substring(9, 10))) return false;
-//     soma = 0;
-//     for (let i = 1; i <= 10; i++) soma += parseInt(cpf.substring(i - 1, i)) * (12 - i);
-//     resto = (soma * 10) % 11;
-//     if (resto === 10 || resto === 11) resto = 0;
-//     if (resto !== parseInt(cpf.substring(10, 11))) return false;
-//     return true;
-// }
-
-// Adiciona o evento de submit
-form.addEventListener("submit", function (event) {
-    event.preventDefault(); // evita recarregar a página
-
-    // Captura os valores dos campos
-    const dados = {
-        nome: document.getElementById("nome").value.trim(),
-        // sobrenome: document.getElementById("sobrenome").value.trim(),
-        email: document.getElementById("email").value.trim(),
-        senha: document.getElementById("senha").value.trim(),
-        cpf: document.getElementById("cpf").value.trim(),
-        endereco: document.getElementById("cidade").value.trim()
-        //perfil: document.querySelector('input[name="perfil"]:checked')?.value || ""
-    };
-
-    // Validação simples
-    if (
-        !dados.nome ||
-        // !dados.sobrenome ||
-        !dados.email ||
-        !dados.senha ||
-        !dados.cpf ||
-        !dados.endereco //||
-        //!dados.perfil
-    ) {
-        alert("Preencha todos os campos corretamente.");
-        return;
+    // Validação básica
+    if (!nome || !sobrenome || !email || !senha || !cpf || !cidade || !tipoPessoaInput) {
+      alert('Por favor, preencha todos os campos obrigatórios.');
+      return;
     }
 
-    // 
-    // desativado para facilitar os testes
-    // 
+    const tipo_pessoa = tipoPessoaInput.value;
 
-    dados.cpf = limparCPF(dados.cpf);
-    // if (!validarCPF(dados.cpf)) {
-    //     alert("CPF inválido.");
-    //     return;
-    // }
+    // Monta objeto com dados básicos
+    const dadosBasicos = {
+      nome: `${nome} ${sobrenome}`,
+      email,
+      senha,
+      cpf,
+      cidade,
+      tipo_pessoa
+    };
+
+    // Salva no sessionStorage
+    sessionStorage.setItem('cadastro_basico', JSON.stringify(dadosBasicos));
+
+    // Redireciona para a próxima etapa
+    if (tipo_pessoa === 'aluno') {
+      window.location.href = '/cadastro_do_estudante';
+    } else if (tipo_pessoa === 'professor') {
+      window.location.href = '/cadastro_professor';
+    } else {
+      alert('Tipo de pessoa inválido.');
+    }
+  });
+});
+
 
     // Envia para a API
     fetch("/api/cadastro", {
