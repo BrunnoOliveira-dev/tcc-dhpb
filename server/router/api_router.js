@@ -33,6 +33,10 @@ router.get("/pessoas", async (req, res) => {
   PessoaController.getPessoas(req, res);
 });
 
+//Procurar pessoa para o Login
+
+router.post('/login', LoginController.fazerLogin);
+
 
 // ============================
 // ROTAS PARA ESCOLA
