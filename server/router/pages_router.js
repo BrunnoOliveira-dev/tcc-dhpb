@@ -19,6 +19,11 @@ router.get('/cadastro_do_estudante', (req, res) => {
     res.sendFile(path.join(__dirname, '../../public/pages/cadastro_do_estudante.html'));
 });
 
+// Rota para a página de cadastro do professor
+router.get('/cadastro_professor', (req, res) => {
+    res.sendFile(path.join(__dirname, '../../public/pages/cadastro_professor.html'));
+});
+
 // Rota para a página de modelo de questão
 router.get('/model_questao', (req, res) => {
     res.sendFile(path.join(__dirname, '../../public/pages/model_questao.html'));
