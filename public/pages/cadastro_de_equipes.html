@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Equipes</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../src/css/cadastro_de_equipes.css">
+</head>
+
+<body>
+<div class="page-container">
+
+  <!-- Cabeçalho -->
+  <header class="header">
+    <h1 class="header-title">Montagem das equipes</h1>
+    <span class="header-subtitle">3ª DHPB - INSCRIÇÃO</span>
+  </header>
+
+  <!-- Filtros -->
+  <section class="filters">
+    <label for="filter-teams">Mostrar equipes:</label>
+    <div class="filter-options">
+      <button class="filter active">Todas</button>
+      <button class="filter">Sem orientador(a)</button>
+      <button class="filter">Faltam estudantes</button>
+      <button class="filter">Falta pagar</button>
+      <button class="filter">Falta um nome</button>
+    </div>
+  </section>
+
+
+  <!-- Processo -->
+  <section class="process-info">
+    <h2 class="process-title">Processo de inscrição #899663</h2>
+    <p class="process-code">Código de processo: 8520a7580</p>
+    <p class="process-details">Este processo contempla 1 equipe.</p>
+    <a href="#" class="cancel-link">Cancelar este processo</a>
+  </section>
+
+  <!-- Barra de progresso -->
+  <section class="progress-container">
+    <div class="progress-bar">
+      <div class="progress-step done">
+        <span>1</span>
+        <div class="progress-label">Pendência desta equipe</div>
+      </div>
+      <div class="progress-line"></div>
+      <div class="progress-step current">
+        <span>2</span>
+        <div class="progress-label">Equipe tem orientador(a)</div>
+      </div>
+      <div class="progress-line"></div>
+      <div class="progress-step">
+        <span>3</span>
+        <div class="progress-label">Três estudantes com conta</div>
+      </div>
+      <div class="progress-line"></div>
+      <div class="progress-step">
+        <span>4</span>
+        <div class="progress-label">Equipe nomeada</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Formulário equipe -->
+  <section class="team-form">
+    <h3 class="form-label">Nome da equipe</h3>
+    <input type="text" class="team-input" placeholder="Digite o nome da equipe">
+    <button class="btn btn-save">Salvar Nome</button>
+
+    <div class="team-info">
+      <p><strong>Responsável:</strong> Gladys Veiga</p>
+      <p><strong>Modalidade:</strong> Ensino Médio</p>
+      <p><strong>Escola:</strong> IFPB - CAMPUS CAMPINA GRANDE</p>
+    </div>
+  </section>
+
+  <!-- Lista de equipe -->
+  <section class="team-list">
+    <div class="team-card">
+      <span class="member">✓ LETÍCIA GABRIELLY</span>
+      <button class="btn btn-edit">Editar</button>
+    </div>
+    <div class="team-status">ORIENTADOR(A) >>> TUDO CERTO! LETÍCIA JÁ CRIOU UMA CONTA!</div>
+  </section>
+
+  <!-- Convite -->
+  <section class="invite-form">
+    <div class="field">
+      <label>Email</label>
+      <input type="email" class="input">
+    </div>
+    <div class="field">
+      <label>Nome</label>
+      <input type="text" class="input">
+    </div>
+    <button class="btn btn-invite">Convidar</button>
+  </section>
+
+  <!-- Rodapé -->
+  <footer class="footer">
+    <p class="footer-msg">ESTUDANTE >>> FALTA CONVIDAR UMA PESSOA PARA OCUPAR ESSA VAGA.</p>
+  </footer>
+</div>
+</body>
+</html>

@@ -69,4 +69,9 @@ router.get('/fases', (req, res) => {
     res.sendFile(path.join(__dirname, '../../public/pages/fases.html'));
 });
 
+// Rota pagina de criar equipe
+router.get('/criar_equipe', (req, res) => {
+    res.sendFile(path.join(__dirname, '../../public/pages/criar_equipe.html'));
+});
+
 module.exports = router;
