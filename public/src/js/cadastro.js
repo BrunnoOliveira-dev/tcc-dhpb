@@ -46,30 +46,30 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
-    // Envia para a API
-    fetch("/api/cadastro", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(dados)
-        })
-        .then((response) => {
-            if (!response.ok) {
-                throw new Error("Erro ao cadastrar");
-            }
-            return response.json();
-        })
-        .then((data) => {
-            alert("Cadastro realizado com sucesso!");
-            console.log("Resposta da API:", data);
-            form.reset(); // limpa o formulário
-            fetch("/login").then(() => {
-                window.location.href = "/login"; // redireciona para a página de login
-            });
-        })
-        .catch((error) => {
-            alert("Ocorreu um erro ao enviar os dados.");
-            console.error(error);
-        });
-});
+// // Envia para a API
+// fetch("/api/cadastro", {
+//     method: "POST",
+//     headers: {
+//       "Content-Type": "application/json"
+//     },
+//     body: JSON.stringify(dados)
+//   })
+//   .then((response) => {
+//     if (!response.ok) {
+//       throw new Error("Erro ao cadastrar");
+//     }
+//     return response.json();
+//   })
+//   .then((data) => {
+//     alert("Cadastro realizado com sucesso!");
+//     console.log("Resposta da API:", data);
+//     form.reset(); // limpa o formulário
+//     fetch("/login").then(() => {
+//       window.location.href = "/login"; // redireciona para a página de login
+//     });
+//   })
+//   .catch((error) => {
+//     alert("Ocorreu um erro ao enviar os dados.");
+//     console.error(error);
+//   });
+// });

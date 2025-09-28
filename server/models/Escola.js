@@ -8,16 +8,36 @@ const Escola = sequelize.define("Escola", {
         primaryKey: true,
         autoIncrement: true,
     },
-    nome: {
-        type: DataTypes.STRING(120),
-        allowNull: false,
-    },
-    endereco: {
-        type: DataTypes.STRING(150),
+    codigo_inep: {
+        type: DataTypes.STRING(20),
+        unique: true,
         allowNull: true,
     },
-    cidade: {
-        type: DataTypes.STRING(80),
+    nome: {
+        type: DataTypes.STRING(255),
+        allowNull: false,
+    },
+    uf: {
+        type: DataTypes.CHAR(2),
+        allowNull: true,
+    },
+    municipio: {
+        type: DataTypes.STRING(100),
+        allowNull: true,
+    },
+    endereco: {
+        type: DataTypes.STRING(255),
+        allowNull: true,
+    },
+    telefone: {
+        type: DataTypes.STRING(30),
+    },
+    categoria_administrativa: {
+        type: DataTypes.STRING(50),
+        allowNull: true,
+    },
+    dependencia_administrativa: {
+        type: DataTypes.STRING(50),
         allowNull: true,
     },
     created_at: {

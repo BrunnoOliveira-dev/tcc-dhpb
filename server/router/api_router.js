@@ -1,3 +1,4 @@
+
 const express = require('express');
 const router = express.Router();
 
@@ -10,6 +11,8 @@ const PessoaController = require("../controllers/PessoaController");
 const EscolaController = require("../controllers/EscolaController");
 const AlunoController = require("../controllers/AlunoController");
 const ProfessorController = require("../controllers/ProfessorController");
+const LoginController = require("../controllers/LoginController");
+const EquipeController = require("../controllers/EquipeController");
 
 
 // rota teste
@@ -46,8 +49,25 @@ router.post("/escolas", async (req, res) => {
   EscolaController.setEscola(req, res);
 });
 
-router.get("/escolas", async (req, res) => {
-  EscolaController.getEscolas(req, res);
+
+// Busca dinâmica de escolas (autocomplete)
+const { Op } = require('sequelize');
+const Escola = require('../models/Escola');
+router.get('/escolas', async (req, res) => {
+  const { nome } = req.query;
+  if (!nome || nome.length < 2) return res.json([]);
+  try {
+    const escolas = await Escola.findAll({
+      where: {
+        nome: { [Op.like]: `%${nome}%` }
+      },
+      limit: 10,
+      order: [['nome', 'ASC']]
+    });
+    res.json(escolas);
+  } catch (err) {
+    res.status(500).json({ erro: err.message });
+  }
 });
 
 
@@ -99,6 +119,18 @@ router.get('/questoes/alternativas/:id', AlternativaController.alternativasDeUma
 
 router.post('/imagens', ImagemController.criarImagem);
 router.get('/imagens', ImagemController.listarImagens);
+
+
+// ============================
+// ROTAS PARA EQUIPE
+// ============================
+router.post("/equipes", async (req, res) => {
+  EquipeController.setEquipe(req, res);
+});
+
+router.get("/equipes", async (req, res) => {
+  EquipeController.getEquipes(req, res);
+});
 
 
 // rotas para cadastro e login podem ser adicionadas aqui

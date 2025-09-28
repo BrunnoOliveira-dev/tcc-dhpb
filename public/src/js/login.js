@@ -45,9 +45,9 @@ form.addEventListener("submit", function (event) {
 
             // salva os dados do usuário no localStorage
             localStorage.setItem("usuario", JSON.stringify({
-                id_pessoa: data.usuario.id_pessoa,
-                nome: data.usuario.nome,
-                email: data.usuario.email
+                id_pessoa: data.pessoa.id_pessoa,
+                nome: data.pessoa.nome,
+                email: data.pessoa.email
             }));
 
 

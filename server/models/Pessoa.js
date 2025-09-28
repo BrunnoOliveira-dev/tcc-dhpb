@@ -10,10 +10,10 @@ const Pessoa = sequelize.define("Pessoa", {
     type: DataTypes.STRING(120), 
     allowNull: false 
   },
-  cpf: { 
-    type: DataTypes.CHAR(11), 
-    allowNull: false, 
-    unique: true 
+  cpf: {
+    type: DataTypes.CHAR(11),
+    allowNull: false,
+    unique: true
   },
   email: { 
     type: DataTypes.STRING(120), 

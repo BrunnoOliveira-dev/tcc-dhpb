@@ -13,8 +13,9 @@
     <div class="form-box">
       <h1>Cadastro do Estudante</h1>
 
-      <label class="label">Escola:</label>
-      <input type="text" class="input">
+  <label class="label">Escola:</label>
+  <input type="text" class="input" id="busca-escola" autocomplete="off" placeholder="Digite para buscar...">
+  <div id="sugestoes-escola" class="autocomplete-list"></div>
 
       <label class="label">Tipo da Escola:</label>
       <div class="options">
@@ -38,6 +39,8 @@
       <button class="btn">PRÓXIMO</button>
     </div>
   </div>
+
+  <script src="../src/js/cadastro_do_estudante.js"></script>
 </body>
 
 </html>

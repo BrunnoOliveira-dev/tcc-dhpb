@@ -1,5 +1,9 @@
 const pessoa = require('../models/Pessoa');
 
+async function limparCPF(cpf) {
+  return cpf.replace(/\D/g, '');
+}
+
 async function setPessoa(req, res) {
   try {
     const novaPessoa = await pessoa.create(req.body);
@@ -39,5 +43,6 @@ async function login(req, res) {
 module.exports = {
   setPessoa,
   getPessoas,
-  login
+  login,
+  limparCPF
 };
