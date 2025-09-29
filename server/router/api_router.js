@@ -1,9 +1,10 @@
+const express = require('express');
+const router = express.Router();
+
 // Atualizar equipe do aluno (adicionar/remover membro)
 router.put('/alunos/:id_aluno/equipe', async (req, res) => {
   AlunoController.atualizarEquipeAluno(req, res);
 });
-const express = require('express');
-const router = express.Router();
 
 // Importando os controladores
 
