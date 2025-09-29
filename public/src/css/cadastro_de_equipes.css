@@ -1,3 +1,21 @@
+.card-status-green {
+  background: #3bb54a !important;
+  color: #fff !important;
+}
+.card-status-red {
+  background: #c0392b !important;
+  color: #fff !important;
+}
+.card-status-gray {
+  background: #b5b5b5 !important;
+  color: #fff !important;
+}
+.team-card small {
+  display: block;
+  font-size: 0.85em;
+  color: #eaeaea;
+  font-weight: 400;
+}
 /* Barra de progresso compacta e responsiva */
 .progress-container {
   width: 100%;

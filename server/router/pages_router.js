@@ -1,5 +1,3 @@
-// Arquivo que conterar as rotas relacionadas as paginas web
-
 const express = require('express');
 const router = express.Router();
 const path = require('path');
@@ -69,9 +67,27 @@ router.get('/fases', (req, res) => {
     res.sendFile(path.join(__dirname, '../../public/pages/fases.html'));
 });
 
-// Rota pagina de criar equipe
-router.get('/criar_equipe', (req, res) => {
-    res.sendFile(path.join(__dirname, '../../public/pages/criar_equipe.html'));
+// Rota para selecionar escola antes de criar equipe
+router.get('/selecionar_escola', (req, res) => {
+    res.sendFile(path.join(__dirname, '../../public/pages/selecionar_escola.html'));
 });
+
+
+// Rota para cadastro de equipe por processo
+router.get('/criar_equipe/:id_processo', (req, res) => {
+    res.sendFile(path.join(__dirname, '../../public/pages/cadastro_de_equipes.html'));
+});
+
+// Rota antiga (sem id) para compatibilidade
+router.get('/criar_equipe', (req, res) => {
+    res.sendFile(path.join(__dirname, '../../public/pages/cadastro_de_equipes.html'));
+});
+
+// Página de processos de inscrição por escola
+router.get('/processos_inscricao', (req, res) => {
+    res.sendFile(path.join(__dirname, '../../public/pages/processos_inscricao.html'));
+});
+// Arquivo que conterar as rotas relacionadas as paginas web
+
 
 module.exports = router;

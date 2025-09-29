@@ -1,3 +1,19 @@
+// Atualiza o id_equipe do aluno (adiciona ou remove de uma equipe)
+async function atualizarEquipeAluno(req, res) {
+    try {
+        const { id_aluno } = req.params;
+        const { id_equipe } = req.body;
+        const [updated] = await aluno.update({ id_equipe, esta_em_uma_equipe: !!id_equipe }, { where: { id_aluno } });
+        if (updated) {
+            const alunoAtualizado = await aluno.findByPk(id_aluno);
+            res.json(alunoAtualizado);
+        } else {
+            res.status(404).json({ erro: 'Aluno não encontrado' });
+        }
+    } catch (err) {
+        res.status(500).json({ erro: err.message });
+    }
+}
 const aluno = require('../models/Aluno');
 const pessoa = require('../models/Pessoa');
 const escola = require('../models/Escola');
@@ -59,5 +75,6 @@ async function getAlunos(req, res) {
 
 module.exports = {
     setAluno,
-    getAlunos
+    getAlunos,
+    atualizarEquipeAluno
 };

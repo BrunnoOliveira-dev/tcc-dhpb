@@ -1,4 +1,7 @@
-
+// Atualizar equipe do aluno (adicionar/remover membro)
+router.put('/alunos/:id_aluno/equipe', async (req, res) => {
+  AlunoController.atualizarEquipeAluno(req, res);
+});
 const express = require('express');
 const router = express.Router();
 
@@ -79,7 +82,39 @@ router.post("/alunos", async (req, res) => {
   AlunoController.setAluno(req, res);
 });
 
+
+// Buscar alunos por email (para autocomplete e validação)
 router.get("/alunos", async (req, res) => {
+  const { email } = req.query;
+  if (email) {
+    try {
+      const Aluno = require('../models/Aluno');
+      const Pessoa = require('../models/Pessoa');
+      // Busca aluno pelo email na tabela Pessoa e retorna dados essenciais
+      const aluno = await Aluno.findOne({
+        include: [{
+          model: Pessoa,
+          as: 'Pessoa',
+          where: { email },
+          attributes: ['id_pessoa', 'nome', 'email']
+        }],
+        attributes: ['id_aluno', 'id_escola', 'esta_em_uma_equipe']
+      });
+      if (!aluno) return res.json([]);
+      // Monta resposta enxuta
+      const resp = {
+        id_aluno: aluno.id_aluno,
+        id_escola: aluno.id_escola,
+        esta_em_uma_equipe: aluno.esta_em_uma_equipe,
+        nome: aluno.Pessoa.nome,
+        email: aluno.Pessoa.email
+      };
+      return res.json([resp]);
+    } catch (err) {
+      return res.status(500).json({ erro: err.message });
+    }
+  }
+  // Se não houver email, retorna todos (comportamento antigo)
   AlunoController.getAlunos(req, res);
 });
 
@@ -124,12 +159,25 @@ router.get('/imagens', ImagemController.listarImagens);
 // ============================
 // ROTAS PARA EQUIPE
 // ============================
+
+// Criar equipe (id_processo pode vir do corpo ou query)
 router.post("/equipes", async (req, res) => {
   EquipeController.setEquipe(req, res);
 });
 
+// Listar equipes, com filtro por id_processo
 router.get("/equipes", async (req, res) => {
   EquipeController.getEquipes(req, res);
+});
+
+// Atualizar equipe
+router.put("/equipes/:id", async (req, res) => {
+  EquipeController.updateEquipe(req, res);
+});
+
+// Remover equipe
+router.delete("/equipes/:id", async (req, res) => {
+  EquipeController.deleteEquipe(req, res);
 });
 
 
@@ -137,6 +185,15 @@ router.get("/equipes", async (req, res) => {
 
 router.post('/cadastro', PessoaController.setPessoa); // Reutilizando o controlador de Pessoa para cadastro
 router.post('/login', PessoaController.login); // Rota de login
+
+// ============================
+// ROTAS PARA PROCESSO DE INSCRIÇÃO
+// ============================
+const ProcessoInscricaoController = require('../controllers/ProcessoInscricaoController');
+router.post('/processos', ProcessoInscricaoController.criarProcesso);
+router.get('/processos', ProcessoInscricaoController.listarProcessos);
+router.put('/processos/:id', ProcessoInscricaoController.atualizarProcesso);
+router.get('/processos/:id', ProcessoInscricaoController.buscarPorId);
 
 
 module.exports = router;

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Selecionar Escola</title>
+  <link rel="stylesheet" href="../src/css/cadastro_de_equipes.css">
+  <style>
+    .autocomplete-box {
+      position: relative;
+      width: 100%;
+      max-width: 400px;
+    }
+    .autocomplete-list {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: #fff;
+      border: 1px solid #ccc;
+      z-index: 10;
+      max-height: 180px;
+      overflow-y: auto;
+      border-radius: 0 0 8px 8px;
+    }
+    .autocomplete-item {
+      padding: 8px 12px;
+      cursor: pointer;
+      border-bottom: 1px solid #eee;
+    }
+    .autocomplete-item:last-child {
+      border-bottom: none;
+    }
+    .autocomplete-item:hover {
+      background: #f0f6ff;
+    }
+  </style>
+</head>
+<body>
+  <div class="page-container">
+    <header class="header">
+      <h1 class="header-title">Selecione sua escola</h1>
+      <span class="header-subtitle">3ª DHPB - INSCRIÇÃO</span>
+    </header>
+    <section style="margin: 40px auto; max-width: 420px;">
+      <form id="form-escola">
+        <label for="busca-escola" style="font-weight: bold;">Digite o nome da escola:</label>
+        <div class="autocomplete-box">
+          <input type="text" id="busca-escola" class="team-input" placeholder="Ex: IFPB, Estadual, etc." autocomplete="off">
+          <div id="sugestoes-escola" class="autocomplete-list"></div>
+        </div>
+        <button class="btn btn-save" type="submit" style="margin-top: 18px;">Avançar</button>
+      </form>
+    </section>
+  </div>
+  <script>
+    let escolaSelecionada = null;
+    const buscaEscola = document.getElementById('busca-escola');
+    const sugestoes = document.getElementById('sugestoes-escola');
+    const form = document.getElementById('form-escola');
+    let debounceTimeout;
+
+    buscaEscola.addEventListener('input', function () {
+      clearTimeout(debounceTimeout);
+      debounceTimeout = setTimeout(() => {
+        const termo = buscaEscola.value.trim();
+        sugestoes.innerHTML = '';
+        escolaSelecionada = null;
+        if (termo.length < 2) return;
+        fetch(`/api/escolas?nome=${encodeURIComponent(termo)}`)
+          .then(res => res.json())
+          .then(lista => {
+            lista.slice(0, 8).forEach(escola => {
+              const div = document.createElement('div');
+              div.className = 'autocomplete-item';
+              div.textContent = `${escola.nome} (${escola.municipio || ''} - ${escola.uf || ''})`;
+              div.onclick = () => {
+                buscaEscola.value = escola.nome;
+                escolaSelecionada = escola;
+                sugestoes.innerHTML = '';
+              };
+              sugestoes.appendChild(div);
+            });
+          });
+      }, 300);
+    });
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (!escolaSelecionada) {
+        alert('Selecione uma escola da lista.');
+        return;
+      }
+      // Salva no sessionStorage e avança para cadastro de equipe
+      sessionStorage.setItem('escola_selecionada', JSON.stringify(escolaSelecionada));
+  window.location.href = '/processos_inscricao';
+    });
+  </script>
+</body>
+</html>

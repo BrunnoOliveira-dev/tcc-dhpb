@@ -3,7 +3,6 @@ const app = express()
 const port = 3000
 const path = require("path")
 
-const sequelize = require('./server/config/config_db');
 
 const router = require("./server/router/router")
 

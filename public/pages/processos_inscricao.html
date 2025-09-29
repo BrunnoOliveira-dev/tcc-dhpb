@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Processos de Inscrição</title>
+  <link rel="stylesheet" href="../src/css/cadastro_de_equipes.css">
+  <style>
+    .process-list { margin: 30px 0; }
+    .process-card {
+      background: #f5f8ff;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px #0001;
+      padding: 18px 20px;
+      margin-bottom: 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-left: 6px solid #1070FF;
+    }
+    .process-card.completo { border-left-color: #3bb54a; }
+    .process-card.em_andamento { border-left-color: #f1c40f; }
+    .process-info { flex: 1; }
+    .process-status { font-weight: bold; }
+    .btn-novo-processo {
+      background: #1070FF;
+      color: #fff;
+      border: none;
+      border-radius: 20px;
+      padding: 10px 24px;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      margin-bottom: 20px;
+      transition: background 0.2s;
+    }
+    .btn-novo-processo:hover { background: #0056c7; }
+  </style>
+</head>
+<body>
+  <div class="page-container">
+    <header class="header">
+      <h1 class="header-title">Processos de Inscrição</h1>
+      <span class="header-subtitle">3ª DHPB - INSCRIÇÃO</span>
+    </header>
+    <section id="escola-info" style="margin: 20px 0 10px 0;"></section>
+    <button class="btn-novo-processo">+ Novo Processo</button>
+    <section class="process-list" id="lista-processos"></section>
+  </div>
+
+  <script src="../src/js/processos_inscricao.js"></script>
+</body>
+</html>
