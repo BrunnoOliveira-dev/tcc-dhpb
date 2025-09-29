@@ -72,6 +72,11 @@ router.get('/selecionar_escola', (req, res) => {
     res.sendFile(path.join(__dirname, '../../public/pages/selecionar_escola.html'));
 });
 
+// Rota pagina de criar equipe
+router.get('/criar_equipe', (req, res) => {
+    res.sendFile(path.join(__dirname, '../../public/pages/cadastro_de_equipes.html'));
+});
+
 
 // Rota para cadastro de equipe por processo
 router.get('/criar_equipe/:id_processo', (req, res) => {
