@@ -1,10 +1,6 @@
 const express = require('express');
 const router = express.Router();
 
-// Atualizar equipe do aluno (adicionar/remover membro)
-router.put('/alunos/:id_aluno/equipe', async (req, res) => {
-  AlunoController.atualizarEquipeAluno(req, res);
-});
 
 // Importando os controladores
 
@@ -117,6 +113,11 @@ router.get("/alunos", async (req, res) => {
   }
   // Se não houver email, retorna todos (comportamento antigo)
   AlunoController.getAlunos(req, res);
+});
+
+// Atualizar equipe do aluno (adicionar/remover membro)
+router.put('/alunos/:id_aluno/equipe', async (req, res) => {
+  AlunoController.atualizarEquipeAluno(req, res);
 });
 
 
